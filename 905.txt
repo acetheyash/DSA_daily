@@ -1,0 +1,18 @@
+  vector<int> sortArrayByParity(vector<int>& nums) {
+        vector<int> v(nums.size(),0);
+        int i=0,j=nums.size()-1;
+        for(int k=0;k<nums.size();k++)
+        {
+            if(nums[k]%2!=0)
+            {
+                v[j]=nums[k];
+                j--;
+            }
+            else
+            {
+                v[i]= nums[k];
+                i++;
+            }
+        }    
+        return v;                           
+    }
