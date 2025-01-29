@@ -1,0 +1,28 @@
+ void merge(vector<int>& n1, int m, vector<int>& n2, int n) {
+        int a=0,b=0,i=0; 
+        vector<int> v;
+        while(a<m&&b<n)
+        {
+            if(n1[a]<=n2[b])
+            {
+                v.push_back(n1[a]);
+                a++;
+            }
+
+            else
+            {
+                v.push_back(n2[b]);
+                b++;
+            }
+        }
+        for(int j=b;j<n;j++)
+        v.push_back(n2[j]);
+
+        for(int j=a;j<m;j++)
+        v.push_back(n1[j]);
+
+        for(int i=0;i<(n+m);i++)
+        {
+            n1[i]=v[i];
+        }
+    }
