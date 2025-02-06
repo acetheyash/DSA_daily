@@ -1,0 +1,30 @@
+
+    vector<int> twoSum(vector<int>& t, int target) {
+        vector<int> b;
+        vector<vector<int>> nums;
+        for(int i=0;i<t.size();i++)
+        {
+            b.push_back(t[i]);
+            b.push_back(i);
+            nums.push_back(b);
+            b.clear();
+        }
+        int s=0,e=nums.size()-1;
+        sort(nums.begin(),nums.end());
+        vector<int> v;
+        while(s<e)
+        {
+            int x=nums[s][0]+nums[e][0];
+            if(x==target)
+            {
+                v.push_back(nums[s][1]);
+                v.push_back(nums[e][1]);
+                break;
+            }
+            if(target>x)
+            s++;
+            else if(target<x)
+            e--;
+        }
+        return v;
+    }
